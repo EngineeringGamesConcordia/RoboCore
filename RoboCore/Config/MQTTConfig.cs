@@ -52,7 +52,7 @@ namespace RoboCore.Config
             set
             {
                 ThrowIfLocked();
-                _isBroker = value;
+                _useAutoDiscovery = value;
             }
         }
 

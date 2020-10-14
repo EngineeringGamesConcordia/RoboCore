@@ -154,8 +154,6 @@ namespace RoboCore.DataTransport.MQTT.Discovery
             var ipEndpoint = new IPEndPoint(IPAddress.Parse(BroadcastIP), _config.AutoDiscoveryBroadcastPort);
             var messageBytes = Encoding.ASCII.GetBytes(message);
             
-            udpClient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
-            udpClient.Client.Bind(ipEndpoint);
             udpClient.Send(messageBytes, messageBytes.Length, ipEndpoint);
             udpClient.Close();
         }
